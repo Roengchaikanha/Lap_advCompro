@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,13 +13,10 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private Button topage2;
-    private View view;
-    private Button Button3;
-    private String name;
-    private String email;
+    private Button Bttobrowse;
 
 
-//    Private AlertDialog.Builder builder;
+
 
 
     @Override
@@ -34,7 +29,59 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    topage2 = findViewById(R.id.button);
+//Lap_04
+        class Main {
+            public void main(String[] args) {
+
+                // ======= TextNote Example =======
+                TextNote tNote = new TextNote(); // สร้าง object TextNote
+                tNote.setTitle("Meeting");        // กำหนด title
+                tNote.setContent("Discuss project"); // กำหนด content
+                tNote.displayNote();              // เรียก method override ของ TextNote
+
+                System.out.println("-----");
+
+                // ======= CheckListNote Example =======
+                ChecklistNote cNote = new ChecklistNote();
+                cNote.setTitle("Shopping List");
+                cNote.setContent("ของที่ต้องซื้อ");
+                cNote.setcreatedDate("2025-09-09"); // กำหนดวันที่สร้าง
+                cNote.setTask1("Milk");             // กำหนด Task 1
+                cNote.setTask2("Bread");            // กำหนด Task 2
+                cNote.displayNote();                // เรียก method override ของ CheckListNote
+
+                System.out.println("===== User Example =====");
+
+                // ======= NormalUser Example =======
+                User u1 = new NormalUser();
+                u1.setName("Kim");                  // กำหนดชื่อ
+                u1.setEmail("kim@gmail.com");       // กำหนด email
+                u1.setPassword(1234);               // กำหนด password
+                u1.displayUser();                      // เรียก method override ของ NormalUser
+
+                System.out.println("-----");
+
+                // ======= Polymorphism Example =======
+                Note n = new TextNote();            // Reference เป็น Note
+                n.setTitle("Polymorphism Test");
+                n.setContent("This is a test");
+                n.displayNote();                    // เรียก override method ของ TextNote
+
+                User u = new NormalUser();          // Reference เป็น User
+                u.setName("Poly User");
+                u.setEmail("poly@gmail.com");
+                u.setPassword(9999);
+                u.displayUser();                       // เรียก override method ของ NormalUser
+            }
+        }
+
+
+
+
+
+
+
+        topage2 = findViewById(R.id.button);
     topage2.setOnClickListener(new View.OnClickListener() {
 
         @Override
@@ -44,60 +91,24 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     });
-//        view = findViewById(R.id.view);
+    Bttobrowse = findViewById(R.id.Bttobrowse);
+    Bttobrowse.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("Bttobrowse");
+            Intent intent = new Intent(MainActivity.this, BrowseNoteActivity.class);
+            startActivity(intent);
+        }
+    });
 
-//        builder = new AlertDialog.Builder(this);
-
-//        view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                System.out.println("touched");
-//                Intent intent = new Intent(MainActivity.this, AddNoteActivity.class);
-//                startActivity(intent);
 
 
-//                builder.setTitle("Alert");
-//                builder.setMessage("Are you sure you want to exit?");
-//                builder.setCancelable(false);
-//                builder.show();
-//                return false;
-////
-//            }
-//        });
 
-//        void onclickSave(View view) {
-        EditText etUsername = findViewById(R.id.etUsername);
-        EditText etuserEmail = findViewById(R.id.etuserEmail);
-        EditText editTextText2 = findViewById(R.id.editTextText2);
 
-        Button Button3 = findViewById(R.id.button3);
 
-        TextView textViewUser = findViewById(R.id.textViewUser);
-        TextView textViewEmail = findViewById(R.id.textViewEmail);
-        TextView textViewContent = findViewById(R.id.textViewContent);
 
-            String username = etUsername.getText().toString();
-            String userEmail = etuserEmail.getText().toString();
-            String content = editTextText2.getText().toString();
 
-            //สร้าง user
-            User user = new User();
-            User.setID(1);
-            User.setName(name);
-            User.setEmail(email);
-
-            //สร้าง Note
-            Note note = new Note();
-            Note.setTitle(1);
-            Note.setContent(content);
-            Note.setUser(user);
-
-            //แสดงผล
-            textViewUser.setText(user.getName());
-            textViewEmail.setText(user.getEmail());
-            textViewContent.setText(note.getContent());
         }
 
 
     }
-}

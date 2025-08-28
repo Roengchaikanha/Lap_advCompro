@@ -1,34 +1,39 @@
 package com.example.lap_advcompro;
-
-public class Note {
+//คลาสแม่ของTexNote และ checkListNote (supperclass)
+public  abstract class Note {
    //Attribute
+    private String createdDate;
+
     private int noteID;
     private String content;
     private String title;
-    private User user;// โน้ตนี้เป็นของใคร
-
-   //method
-    public static void setTitle(int i) {
+    //setter
+    public void setcreatedDate(String createdDate) {
+        this.createdDate = createdDate;
     }
-
-    public static void setContent(String content) {
-     }
-
-     public static void setUser(User user) {
-     }
-
-
- //Setter
-    public void setNoteID(int noteID) {this.noteID = noteID;}
-    public void setcontent(String content) {this.content = content;}
-    public void settitle(String title) {this.title = title;}
-
+    public void setNoteID(int noteID) {
+        this.noteID = noteID;
+    }
+    public void setContent(String content) {
+        this.content = content;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
     //getter
-    public int getNoteID() {return noteID;}
-    public String getcontent() {return content;}
-    public String gettitle() {return title;}
+    public String getcreatedDate() {
+        return createdDate;
+    }
+    public int getNoteID() {
+        return noteID;
+    }
+    public String getContent() {
+        return content;
+    }
+    public String getTitle() {
+        return title;
+    }
+    public abstract void displayNote();
 
- public int getContent() {
-     return 0;
- }
+
 }
