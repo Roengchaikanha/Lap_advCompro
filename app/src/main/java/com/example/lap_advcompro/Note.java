@@ -7,6 +7,8 @@ public  abstract class Note {
     private int noteID;
     private String content;
     private String title;
+
+
 //    public Note(String createdDate, User owner, int noteID, String content, String title){
 //        this.createdDate = createdDate;
 //        this.owner = owner;
