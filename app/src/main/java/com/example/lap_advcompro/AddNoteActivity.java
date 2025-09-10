@@ -39,20 +39,25 @@ public Button button2;
         });
         }
 
+
+
+
+
+        //Lap-05
     public void onclickAddNote(View view) {
+        EditText EdtName = findViewById(R.id.editTextName);
         EditText EdtTitle = findViewById(R.id.edittitle);
         EditText EdtContent = findViewById(R.id.editcontent);
 
-
+        TextView txtName = findViewById(R.id.textViewUser);
         TextView txtTitle = findViewById(R.id.textViewtitle);
         TextView txtContent = findViewById(R.id.textViewcontent);
+        String name = EdtName.getText().toString();
         String title = EdtTitle.getText().toString();
         String content = EdtContent.getText().toString();
 
+        txtName.setText("ชื่อผู้ใช้: " + name);
         txtTitle.setText("ชื่อเรื่อง: " + title);
         txtContent.setText("เนื้อหา: " + content);
-
-
-
     }
 }

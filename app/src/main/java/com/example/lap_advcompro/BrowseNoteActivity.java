@@ -1,6 +1,7 @@
 package com.example.lap_advcompro;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class BrowseNoteActivity extends AppCompatActivity {
 
+
+    Button buttonback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +22,11 @@ public class BrowseNoteActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        buttonback = findViewById(R.id.buttonBack);
+        buttonback.setOnClickListener(view -> {
+
+
         });
     }
 }

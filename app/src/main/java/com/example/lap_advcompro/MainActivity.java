@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+    //ไปหน้าMain
         topage2 = findViewById(R.id.button);
     topage2.setOnClickListener(new View.OnClickListener() {
 
@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     });
+
+    //ไปหน้าbrowse
     Bttobrowse = findViewById(R.id.Bttobrowse);
     Bttobrowse.setOnClickListener(new View.OnClickListener() {
         @Override
